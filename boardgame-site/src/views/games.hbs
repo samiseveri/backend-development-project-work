@@ -1,0 +1,19 @@
+<h1>Board Games</h1>
+{{#if currentUser}}
+  <p><a href="/games/new">Add a new game</a></p>
+{{/if}}
+
+{{#if games.length}}
+  <ul class="game-list">
+    {{#each games}}
+      <li>
+        <a href="/games/{{this._id}}">
+          <strong>{{this.title}}</strong>
+          {{#if this.playersMin}} - players: {{this.playersMin}} to {{this.playersMax}}{{/if}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No games yet.</p>
+{{/if}}

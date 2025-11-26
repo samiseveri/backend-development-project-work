@@ -1,0 +1,40 @@
+<article>
+  <h1>{{game.title}}</h1>
+  {{#if game.imageUrl}}
+    <img src="{{game.imageUrl}}" alt="{{game.title}}" style="max-width:300px" />
+  {{/if}}
+  <p>{{game.description}}</p>
+
+  <h2>Reviews</h2>
+  {{#if reviews.length}}
+    <ul>
+      {{#each reviews}}
+        <li><strong>{{this.user.username}}</strong> — {{this.rating}}/5
+          <div>{{this.comment}}</div>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No reviews yet.</p>
+  {{/if}}
+
+  {{#if currentUser}}
+    <section>
+      <h3>Leave a review</h3>
+      <form method="post" action="/games/{{game._id}}/reviews">
+        <label>Rating
+          <select name="rating">
+            <option>5</option><option>4</option><option>3</option>
+            <option>2</option><option>1</option>
+          </select>
+        </label>
+        <label>Comment
+          <textarea name="comment" rows="3"></textarea>
+        </label>
+        <button type="submit">Submit review</button>
+      </form>
+    </section>
+  {{else}}
+    <p><a href="/users/login">Login</a> to add a review.</p>
+  {{/if}}
+</article>

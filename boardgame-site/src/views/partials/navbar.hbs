@@ -1,0 +1,18 @@
+<nav class="navbar">
+  <div class="container">
+    <a href="/games" class="brand">BoardGameHub</a>
+    <div class="nav-links">
+      <a href="/games">Games</a>
+      <a href="/events">Events</a>
+      {{#if currentUser}}
+        <span>Hello, {{currentUser.username}}</span>
+        <form action="/users/logout" method="post" style="display:inline">
+          <button type="submit">Logout</button>
+        </form>
+      {{else}}
+        <a href="/users/login">Login</a>
+        <a href="/users/register">Register</a>
+      {{/if}}
+    </div>
+  </div>
+</nav>
