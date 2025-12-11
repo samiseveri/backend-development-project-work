@@ -12,6 +12,6 @@ router.get('/events/:id', eventController.viewEvent);
 router.post('/events/:id/join', ensureLoggedIn, eventController.joinEvent);
 router.post('/events/:id/leave', ensureLoggedIn, eventController.leaveEvent);
 
-router.post('/events/:id/delete', requireRole('admin'), eventController.deleteEvent);
+router.post('/events/:id/delete', ensureLoggedIn, eventController.deleteEvent);
 
 module.exports = router;
