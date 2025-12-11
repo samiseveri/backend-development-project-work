@@ -11,6 +11,7 @@ dotenv.config();
 
 const gameRoutes = require('./routes/gameRoutes');
 const userRoutes = require('./routes/userRoutes');
+const eventRoutes = require('./routes/eventRoutes');
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', gameRoutes);
+app.use('/', eventRoutes);
 app.use('/users', userRoutes);
 
 app.get('/home', (req, res) => {

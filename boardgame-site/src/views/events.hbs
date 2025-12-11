@@ -1,0 +1,20 @@
+<h1>Events</h1>
+{{#if currentUser}}
+  <p><a href="/events/new">Create a new event</a></p>
+{{/if}}
+
+{{#if events.length}}
+  <ul class="event-list">
+    {{#each events}}
+      <li>
+        <a href="/events/{{this._id}}">
+          <strong>{{this.title}}</strong>
+          {{#if this.formattedDate}} - {{this.formattedDate}}{{/if}}
+          {{#if this.location}} @ {{this.location}}{{/if}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No events yet.</p>
+{{/if}}

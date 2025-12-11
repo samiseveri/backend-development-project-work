@@ -1,0 +1,40 @@
+<article>
+  <h1>{{event.title}}</h1>
+  <p><strong>Description:</strong> {{event.description}}</p>
+  {{#if event.formattedDate}}
+    <p><strong>Date & Time:</strong> {{event.formattedDate}}</p>
+  {{/if}}
+  {{#if event.duration}}
+    <p><strong>Duration:</strong> {{event.duration}} minutes</p>
+  {{/if}}
+  {{#if event.location}}
+    <p><strong>Location:</strong> {{event.location}}</p>
+  {{/if}}
+  {{#if event.capacity}}
+    <p><strong>Capacity:</strong> {{event.capacity}} people</p>
+  {{/if}}
+
+  <h2>Attendees ({{event.attendees.length}})</h2>
+  {{#if event.attendees.length}}
+    <ul>
+      {{#each event.attendees}}
+        <li>{{this.username}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No attendees yet.</p>
+  {{/if}}
+
+  {{#if currentUser}}
+    <section>
+      <form method="post" action="/events/{{event._id}}/join">
+        <button type="submit">Join Event</button>
+      </form>
+      <form method="post" action="/events/{{event._id}}/leave">
+        <button type="submit">Leave Event</button>
+      </form>
+    </section>
+  {{else}}
+    <p><a href="/users/login">Login</a> to join this event.</p>
+  {{/if}}
+</article>
