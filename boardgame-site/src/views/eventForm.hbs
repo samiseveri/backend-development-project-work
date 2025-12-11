@@ -2,7 +2,12 @@
 <form method="post" action="/events">
   <label>Event Title: <input name="title" required></label><br>
   <label>Description:<br><textarea name="description" rows="5"></textarea></label><br>
-  <label>Date & Time: <input name="date" type="datetime-local" required></label><br>
+  <label>Date:
+    <input name="date" type="date" required pattern="\d{2}/\d{2}/\d{4}">
+  </label>
+  <label>Time:
+    <input name="time" type="time" required>
+  </label><br>
   <label>Duration (minutes): <input name="duration" type="number" min="1" value="120"></label><br>
   <label>Location: <input name="location"></label><br>
   <label>Capacity: <input name="capacity" type="number" min="1"></label><br>
