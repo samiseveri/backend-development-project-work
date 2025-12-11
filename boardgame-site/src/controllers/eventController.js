@@ -23,6 +23,10 @@ exports.showCreateForm = (req, res) => {
 
 exports.createEvent = async (req, res) => {
   const data = req.body;
+  // Combine date and time into a single datetime
+  if (data.date && data.time) {
+    data.date = new Date(`${data.date}T${data.time}`);
+  }
   const event = new Event({ ...data, createdBy: req.session.user ? req.session.user._id : null });
   await event.save();
   res.redirect(`/events/${event._id}`);
