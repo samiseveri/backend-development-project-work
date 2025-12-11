@@ -37,4 +37,12 @@
   {{else}}
     <p><a href="/users/login">Login</a> to join this event.</p>
   {{/if}}
+
+  {{#if currentUser.isAdmin}}
+    <section>
+      <form method="post" action="/events/{{event._id}}/delete" onsubmit="return confirm('Are you sure you want to delete this event?');">
+        <button type="submit" style="background-color: #dc3545; color: white;">Delete Event</button>
+      </form>
+    </section>
+  {{/if}}
 </article>
