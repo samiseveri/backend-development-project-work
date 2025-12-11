@@ -1,7 +1,7 @@
 {
   "name": "boardgame-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. Setup MongoDB on your local PC by first creating an account at MongoDB website and then downloading the community server ''MongoDB Compass'' and installing the .msi file from the link below.\r https://www.mongodb.com/try/download/community",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -12,19 +12,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.0",
-    "cookie-parser": "^1.4.6",
-    "dotenv": "^16.4.5",
-    "express": "^4.18.2",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
     "express-async-errors": "^3.1.1",
-    "express-handlebars": "^7.1.2",
-    "express-session": "^1.17.3",
-    "mongoose": "^7.6.3",
-    "morgan": "^1.10.0"
+    "express-handlebars": "^7.1.3",
+    "express-session": "^1.18.2",
+    "mongoose": "^7.8.8",
+    "morgan": "^1.10.1"
   },
   "devDependencies": {
     "jest": "^29.7.0",
-    "nodemon": "^3.1.0",
-    "supertest": "^7.1.1"
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4"
   }
 }

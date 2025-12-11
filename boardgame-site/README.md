@@ -2,7 +2,7 @@
 https://www.mongodb.com/try/download/community
 
 2. Do these initial installations into git bash (or other terminal you use) by copy-pasteing the line of code below.
-mkdir -p boardgame-site && cd boardgame-site && npm init -y && npm install express dotenv express-handlebars mongoose express-session cookie-parser bcrypt express-async-errors morgan && npm install --save-dev nodemon jest supertest && cp ../.env.example .env && echo "Project setup complete. Edit .env, then run: npm run dev
+mkdir -p boardgame-site && cd boardgame-site && npm init -y && npm install express dotenv express-handlebars mongoose express-session cookie-parser bcrypt express-async-errors morgan && npm install --save-dev nodemon jest supertest && cp ../.env.example .env && echo "Project setup complete. Edit .env", then run: npm run dev
 
 3. Start the server locally by navigating to the boardgame-site directory (cd .\boardgame-site\) and using the command npm start, then CTRL + Click on the http://localhost:3000 link after the server is running.
 
