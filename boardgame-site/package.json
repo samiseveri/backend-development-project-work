@@ -26,5 +26,6 @@
     "jest": "^29.7.0",
     "nodemon": "^3.1.11",
     "supertest": "^7.1.4"
-  }
+  },
+  "type": "commonjs"
 }
